@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK MART | Admin</title>
+
+    <title>RK MART | Home</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <!-- ----------------------------------NAVIGATION MENU BAR----------------------------------- -->
+
+    <nav class="Logo">
+        <div class="menuDatas grid admin-menu-two-columns">
+            <div class="leftSideData">
+                <a href="index.html">
+                    <h2>RK <span> MART </span></h2>
+                </a>
+                <small> A change you can see. </small>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="grid admin-section dashboard-two-columns">
+
+        <section class="dashboardSection">
+            <div class="dashboard">
+                <div class="grid grid-dashboard-menu-two">
+                    <div class="icons">
+                        <p> <i class="fa-solid fa-grip"></i></p>
+                        <p> <i class="fa-solid fa-users"></i></p>
+                        <p> <i class="fa-solid fa-arrow-right-to-bracket"></i></p>
+                        <p> <i class="fa-solid fa-sort"></i></p>
+                        <p> <i class="fa-brands fa-readme"></i></p>
+                    </div>
+                    <div class="dashboardMenu">
+                        <p id="dashboard">Dashboard</p>
+                        <p id="users">Users</p>
+                        <p id="products">Products</p>
+                        <p id="orders">Orders</p>
+                        <p id="reviews">Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+
+                <!-- PRODUCT DASHBOARD -->
+
+                <div class="dashboardOverview" id="dashboardOverview">
+
+                    <h2>Dashboard</h2>
+
+                    <div class="totalAmount">
+                        <h3>Total Amount</h3>
+                        <p>₹72,455</p>
+                    </div>
+
+                    <div class="grid dashboardOverview-three-column dashboardHistory">
+                        <div class="totalProducts">
+                            <p>Products</p>
+                            <p>36</p>
+                        </div>
+                        <div class="totalOrders">
+                            <p>Orders</p>
+                            <p>1</p>
+                        </div>
+                        <div class="totalUsers">
+                            <p>Users</p>
+                            <p>1</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- --------------------------USERS------------------------------ -->
+
+                <div id="usersDatas">
+                    <h2>Users Data</h2>
+
+
+                    <div class="dashboardOverview" id="dashboardOverview">
+
+                        <div class="totalAmount">
+                            <h3>Total Users</h3>
+                            <p>1</p>
+                        </div>
+
+                    </div>
+
+                    <table class="userTable">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>User Mail Id</th>
+                                <th>User Mobile</th>
+                                <th>User Address</th>
+                                <th>User State</th>
+                                <th>User City</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersDataTable"></tbody>
+                    </table>
+
+                </div>
+
+                <!-- -----------------------PRODUCT DETAILS------------------------------- -->
+                <div id="productDashboard">
+                    <h2>Product Details</h2>
+
+                    <div class="dashboardOverview" id="dashboardOverview">
+
+                        <div class="totalAmount">
+                            <h3>Total Products Amount</h3>
+                            <p>₹23,789</p>
+                        </div>
+
+                        <div class="grid products-two-columns dashboardHistory">
+                            <div class="totalProducts">
+                                <p>Products</p>
+                                <p>36</p>
+                            </div>
+                            <div class="totalUsers">
+                                <p>Categories</p>
+                                <p>3</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="userTable">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                                <th>Product Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="productDatas"></tbody>
+                    </table>
+                </div>
+
+                <!-- --------------------------ORDERS------------------------------- -->
+
+                <div id="ordersDashboard">
+
+                    <h2>Orders</h2>
+
+                    <table class="userTable">
+
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>User Name</th>
+                                <th>User Address</th>
+                                <th>Order Status</th>
+                                <th>Order Quantity</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="orderDatas"></tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+    </div>
+    </section>
+    </div>
+
+
+
+
+    <script src="admin.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK MART | Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- ----------------------------------NAVIGATION MENU BAR----------------------------------- -->
+
+    <nav class="menu">
+
+        <a href="index.html"> <h2>RK <span> MART </span></h2> </a>
+
+        <ul>
+            <li> <a href="index.html"> <i class="fa-solid fa-house"></i>Home </a></li>
+
+            <li> <a href="product.html"> <i class="fa-solid fa-bag-shopping"></i>Products </a>
+                
+                <div class="submenu">
+                    <ul>
+                        <a href="Grocery.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-basket-shopping"></i>Grocery <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-pepper-hot"></i>Fresh Vegetables </span></li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-apple-whole"></i>Fresh Fruits </span></li>
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </a>
+                        <a href="Beverges.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-bottle-water"></i>Beverges <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-bottle-droplet"></i>Soft Drinks </span> </li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-wine-bottle"></i>Soft Drinks Can </span> </li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-martini-glass-citrus"></i>Energy Drinks </span> </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </a>
+                        <a href="householdProducts.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-door-open"></i>Household <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li><span id="subMenuAlign"> <i class="fa-solid fa-couch"></i>Home Utensils </span> </li>
+                                        <li><span id="subMenuAlign"> <i class="fa-solid fa-utensils"></i>Kitchen Utensils </span> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </li>
+            <li class="active"> <a href="contact.html"> <i class="fa-solid fa-address-book"></i>Contact </a> </li>
+            <button id="btn" class="login"> <i class="fa-solid fa-user"></i> Login </button>
+
+            <div class="cart" current-count="3">
+               <a href="cart.html"> <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- ---------------------------------------LOGIN---------------------------------------- -->
+    <div class="modelCenter">
+        <dialog class="Loginmodal">
+            <div class="loginMain">
+                <div class="loginDiv">
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="grid grid-two-columns">
+                        <div class="login_Image">
+                            <div class="loginMoto">
+                                <h2>Login</h2>
+                                <p>Get access to your Orders, Wishlist and Wide Range of Products.</p>
+                            </div>
+                            <div class="LoginImage">
+                                <img src="images/SaleImages/SocialMedia.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="login_Data">
+                            <form action="" onsubmit="return login()" method="dialog">
+                                <div class="login-fields">
+                                    <label for="userloginmail">Email</label>
+                                    <input type="email" placeholder="Enter your Mail-Id" name="usernamillogin"
+                                        id="usermaillogin" onkeyup="userMailValidate()"> <span>
+                                        <p id="error1"></p>
+                                    </span>
+                                </div>
+                                <div class="login-fields">
+                                    <label for="userloginpass">Password</label>
+                                    <div class="showpass">
+                                        <input type="password" placeholder="Enter your password" name="userloginpass"
+                                            id="userloginpass" onkeyup="userPasswordValidate()">
+                                        <span onclick="showpass()">
+                                            <i class="fa-solid fa-eye" id="eye"></i>
+                                            <i class="fa-solid fa-eye-slash" id="eyehide"></i>
+                                        </span>
+
+                                    </div> <span>
+                                        <p id="error2"></p>
+                                    </span>
+                                    <p><small> <a href="contact.html"> Forgot Password?</a></small></p>
+                                </div>
+
+                                <div class="login-fields loginBtn">
+                                    <button id="loginbutton" type="" name="submit">Login</button>
+                                </div>
+                                <p id="succefulLogin"></p>
+                                <p id="succefulLogin2"></p>
+                            </form>
+
+                            <div class="newuser">
+                                <p id="toggleRegister"> New to RK MART? <span> Create Account </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+
+    <!-- ----------------------------------------REGISTRATION SECTION ----------------------------------------------------->
+    <div class="modelCenter">
+        <dialog class="Registermodal">
+            <div class="RegistrationDiv">
+                <div class="RegisterBox">
+                    <div class="header">
+                        <h2>Create Account</h2>
+                        <div class="RegisterClose"><i class="fa-solid fa-xmark fa-2x"></i></div>
+                    </div>
+
+                    <form action="" class="form" id="form" onsubmit="return validated()">
+                        <div class="grid grid-two-columns">
+                            <div class="form_fields">
+                                <label>User Name</label>
+                                <input type="text" id="usernames" onkeyup="userNameValidate()"
+                                    placeholder="Enter your name" required>
+                                <p id="nameError"></p>
+                            </div>
+                            <div class="form_fields">
+                                <label>Email</label>
+                                <input type="email" id="mailid" onkeyup="mailValidate()"
+                                    placeholder="Enter your Mail ID" required>
+                                <p id="mailError"></p>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>Mobile Number</label>
+                                <input type="tel" maxlength="10" id="mobilenumber" onkeyup="phoneValidate()"
+                                    placeholder="Enter your Mobile Number" required>
+                                <p id="phoneError"></p>
+                            </div>
+                            <div class="form_fields">
+                                <label>Date Of Birth</label>
+                                <input title="Enter your Date of Birth" type="date" name="DOB" id="DOB" required>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>City</label>
+                                <input title="Enter your City" type="text" placeholder="city" id="city" required>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>Pincode</label>
+                                <input title="Enter your Pincode" type="tel" maxlength="6" placeholder="Pincode"
+                                    id="pincode" required>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="form_fields">
+                                <label>Address</label>
+                                <textarea title="Enter your Address" name="Address" id="address" cols="10" rows="2"
+                                    required></textarea>
+                            </div>
+                            <div class="grid grid-two-columns">
+                                <div class="form_fields">
+                                    <label>Password</label>
+                                    <input title="Enter your Password" type="password" id="password" class="passshow"
+                                        placeholder="Enter Password" required>
+                                </div>
+                                <div class="form_fields">
+                                    <label>Confirm Password</label>
+                                    <input title="Enter your confirm Password" onkeyup="passwordValidate()"
+                                        type="password" id="confirmpassword" class="passshow"
+                                        placeholder="Enter Confirm Password" required>
+                                    <p id="passwordError"></p>
+                                </div>
+                            </div>
+                            <div class="btnD">
+                                <div class="grid grid-two-columns">
+                                    <button type="submit" id="Registered" class="btn"> Register </button>
+                                    <input type="reset" value="reset" class="btn">
+                                    <p class="successfulMessage"></p>
+                                </div>
+
+                                <h4 style="text-align: center;">Already a user?</h4> <span>
+                                    <input type="button" value="Login" class="btn" id="loginToggle"></span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </dialog>
+
+        <dialog class="paymentModal" id="registeredSuccessfulModal">
+            <div class="successMessage">
+                <div class="modalBox">
+                    <i class="fa-solid fa-circle-check fa-4x" style="color: green;"></i>
+                    <h2>Registration Successful</h2>
+                    <div class="button">
+                        <button id="registeredButton" class="btn" onclick="succefulRegister()"> Okay </button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <!-- ----------------------------CONTACT SECTION------------------------------------ -->
+
+    <section class="section contact-section">
+        <div class="container">
+            <h3 class="common-heading">Contact Us</h3>
+        </div>
+
+        <div class="container map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.933835570356!2d77.72430831479062!3d11.339543451647614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4138c09375%3A0x405a7d329f30110c!2sPS%20Park%2C%20Erode%20Fort%2C%20Erode%2C%20Tamil%20Nadu%20638001!5e0!3m2!1sen!2sin!4v1651581190670!5m2!1sen!2sin"
+                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <form action="https://formspree.io/f/xeqnpnke" method="POST">
+            <div class="formBox">
+                <div class="grid grid-two-columns">
+                    <div class="username">
+                        <label for="username"></label>
+                        <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+                    </div>
+                    <div class="username">
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="user@gmail.com" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="subject"></label>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div>
+                    <label for="textarea"></label>
+                    <textarea type="textarea" cols="30" row="10" placeholder="Textarea" required
+                        name="message"></textarea>
+                </div>
+
+                <div class="submitbtn"> <button class="btn" type="submit">Submit</button> </div>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container footerData">
+            <div class="grid grid-five-columns">
+                <div class="about">
+                    <h3>About</h3>
+                    <p>RK MART is a self-service shop offering a wide variety of foods, diary products, beverges and
+                        household
+                        products. A wide range of products Household products, Lifestyle, electronics and much more
+                        to explore. <span> A change you can see. </span></p>
+                </div>
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <li> <a href="Beverges.html"> <i class="fa-solid fa-arrow-right"></i> Beverges </a> </li>
+                    <li> <a href="Grocery.html"> <i class="fa-solid fa-arrow-right"></i> Vegetables & Fruits </a> </li>
+                    <li> <a href="householdProducts.html"> <i class="fa-solid fa-arrow-right"></i> Household Items </a>
+                    </li>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li> <a href="index.html"> <i class="fa-solid fa-arrow-right"></i> Home </a></li>
+                        <li> <a href="product.html"> <i class="fa-solid fa-arrow-right"></i> Product </a>
+                        <li> <a href="contact.html"> <i class="fa-solid fa-arrow-right"></i> Contact Us </a>
+                        <li> <a href="About.html"> <i class="fa-solid fa-arrow-right"></i> About Us </a>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h3>Reach Out Us</h3>
+                    <ul>
+                        <li> <a href="#"> <i class="fa-brands fa-square-facebook"></i>Facebook </a></li>
+                        <li> <a href="#"> <i class="fa-brands fa-square-twitter"></i> Twitter </a>
+                        <li> <a href="#"> <i class="fa-brands fa-instagram"></i>Instagram </a>
+                        <li> <a href="mailto:cecskiran23@gmail.com"> <i class="fa-solid fa-paper-plane"></i>Mail Us </a>
+                    </ul>
+                </div>
+                <div class="Address">
+                    <h3>Help</h3>
+                    <ul>
+                        <li> <a href="#"> <i class="fa-solid fa-arrow-right"></i> FAQ </a></li>
+                        <li> <a href="tel:7659847888"> <i class="fa-solid fa-arrow-right"></i> Telephone </a>
+                        <li> <a href="contact.html"> <i class="fa-solid fa-arrow-right"></i> Contact Us </a>
+                            <hr>
+                        <li> <a href="contact.html"> <i class="fa-solid fa-location-dot"></i> Location </a>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="validation.js"></script>
+
+</body>
+
+</html>

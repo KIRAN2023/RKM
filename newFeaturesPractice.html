@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesting Features</title>
+</head>
+<body>
+
+        <h1 id="temp">Okay</h1>
+        <h2 id="clone"></h2>
+    <button onclick="show()">Template Toggle</button>
+
+    
+    <script>
+        const show = () =>{
+var data = document.getElementById("temp");
+var clone = data.cloneNode(true);
+document.getElementById("clone").appendChild(clone);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RK MART | Products</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ----------------------------------NAVIGATION MENU BAR----------------------------------- -->
+
+    <nav class="menu">
+
+        <a href="index.html"> <h2>RK <span> MART </span></h2> </a>
+
+        <ul>
+            <li> <a href="index.html"> <i class="fa-solid fa-house"></i>Home </a></li>
+
+            <li class="active"> <a href="product.html"> <i class="fa-solid fa-bag-shopping"></i>Products </a>
+
+             
+                <div class="submenu">
+                    <ul>
+                        <a href="Grocery.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-basket-shopping"></i>Grocery <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-pepper-hot"></i>Fresh Vegetables </span></li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-apple-whole"></i>Fresh Fruits </span></li>
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </a>
+                        <a href="Beverges.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-bottle-water"></i>Beverges <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-bottle-droplet"></i>Soft Drinks </span> </li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-wine-bottle"></i>Soft Drinks Can </span> </li>
+                                        <li> <span id="subMenuAlign"> <i class="fa-solid fa-martini-glass-citrus"></i>Energy Drinks </span> </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </a>
+                        <a href="householdProducts.html">
+                            <li> <span id="alignMenu"> <i class="fa-solid fa-door-open"></i>Household <i class="fas fa-caret-right"></i></span>
+
+                                <div class="submenu2">
+                                    <ul>
+                                        <li><span id="subMenuAlign"> <i class="fa-solid fa-couch"></i>Home Utensils </span> </li>
+                                        <li><span id="subMenuAlign"> <i class="fa-solid fa-utensils"></i>Kitchen Utensils </span> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </li>
+            <li> <a href="contact.html"> <i class="fa-solid fa-address-book"></i>Contact </a> </li>
+            <button id="btn" class="login"> <i class="fa-solid fa-user"></i> Login </button>
+
+            <div class="cart" current-count="3">
+                <a href="cart.html"> <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- ---------------------------------------LOGIN---------------------------------------- -->
+    <div class="modelCenter">
+        <dialog class="Loginmodal">
+            <div class="loginMain">
+                <div class="loginDiv">
+                    <div class="close"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="grid grid-two-columns">
+                        <div class="login_Image">
+                            <div class="loginMoto">
+                                <h2>Login</h2>
+                                <p>Get access to your Orders, Wishlist and Wide Range of Products.</p>
+                            </div>
+                            <div class="LoginImage">
+                                <img src="images/SaleImages/SocialMedia.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="login_Data">
+                            <form action="" onsubmit="return login()" method="dialog">
+                                <div class="login-fields">
+                                    <label for="userloginmail">Email</label>
+                                    <input type="email" placeholder="Enter your Mail-Id" name="usernamillogin"
+                                        id="usermaillogin" onkeyup="userMailValidate()"> <span>
+                                        <p id="error1"></p>
+                                    </span>
+                                </div>
+                                <div class="login-fields">
+                                    <label for="userloginpass">Password</label>
+                                    <div class="showpass">
+                                        <input type="password" placeholder="Enter your password" name="userloginpass"
+                                            id="userloginpass" onkeyup="userPasswordValidate()">
+                                        <span onclick="showpass()">
+                                            <i class="fa-solid fa-eye" id="eye"></i>
+                                            <i class="fa-solid fa-eye-slash" id="eyehide"></i>
+                                        </span>
+
+                                    </div> <span>
+                                        <p id="error2"></p>
+                                    </span>
+                                    <p><small> <a href="contact.html"> Forgot Password?</a></small></p>
+                                </div>
+
+                                <div class="login-fields loginBtn">
+                                    <button id="loginbutton" type="" name="submit">Login</button>
+                                </div>
+                                <p id="succefulLogin"></p>
+                                <p id="succefulLogin2"></p>
+                            </form>
+
+                            <div class="newuser">
+                                <p id="toggleRegister"> New to RK MART? <span> Create Account </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+
+    <!-- ----------------------------------------REGISTRATION SECTION ----------------------------------------------------->
+    <div class="modelCenter">
+        <dialog class="Registermodal">
+            <div class="RegistrationDiv">
+                <div class="RegisterBox">
+                    <div class="header">
+                        <h2>Create Account</h2>
+                        <div class="RegisterClose"><i class="fa-solid fa-xmark fa-2x"></i></div>
+                    </div>
+
+                    <form action="" class="form" id="form" onsubmit="return validated()">
+                        <div class="grid grid-two-columns">
+                            <div class="form_fields">
+                                <label>User Name</label>
+                                <input type="text" id="usernames" onkeyup="userNameValidate()"
+                                    placeholder="Enter your name" required>
+                                <p id="nameError"></p>
+                            </div>
+                            <div class="form_fields">
+                                <label>Email</label>
+                                <input type="email" id="mailid" onkeyup="mailValidate()"
+                                    placeholder="Enter your Mail ID" required>
+                                <p id="mailError"></p>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>Mobile Number</label>
+                                <input type="tel" maxlength="10" id="mobilenumber" onkeyup="phoneValidate()"
+                                    placeholder="Enter your Mobile Number" required>
+                                <p id="phoneError"></p>
+                            </div>
+                            <div class="form_fields">
+                                <label>Date Of Birth</label>
+                                <input title="Enter your Date of Birth" type="date" name="DOB" id="DOB" required>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>City</label>
+                                <input title="Enter your City" type="text" placeholder="city" id="city" required>
+                            </div>
+
+                            <div class="form_fields">
+                                <label>Pincode</label>
+                                <input title="Enter your Pincode" type="tel" maxlength="6" placeholder="Pincode"
+                                    id="pincode" required>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="form_fields">
+                                <label>Address</label>
+                                <textarea title="Enter your Address" name="Address" id="address" cols="10" rows="2"
+                                    required></textarea>
+                            </div>
+                            <div class="grid grid-two-columns">
+                                <div class="form_fields">
+                                    <label>Password</label>
+                                    <input title="Enter your Password" type="password" id="password" class="passshow"
+                                        placeholder="Enter Password" required>
+                                </div>
+                                <div class="form_fields">
+                                    <label>Confirm Password</label>
+                                    <input title="Enter your confirm Password" onkeyup="passwordValidate()"
+                                        type="password" id="confirmpassword" class="passshow"
+                                        placeholder="Enter Confirm Password" required>
+                                    <p id="passwordError"></p>
+                                </div>
+                            </div>
+                            <div class="btnD">
+                                <div class="grid grid-two-columns">
+                                    <button type="submit" id="Registered" class="btn"> Register </button>
+                                    <input type="reset" value="reset" class="btn">
+                                    <p class="successfulMessage"></p>
+                                </div>
+
+                                <h4 style="text-align: center;">Already a user?</h4> <span>
+                                    <input type="button" value="Login" class="btn" id="loginToggle"></span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </dialog>
+
+        <dialog class="paymentModal" id="registeredSuccessfulModal">
+            <div class="successMessage">
+                <div class="modalBox">
+                    <i class="fa-solid fa-circle-check fa-4x" style="color: green;"></i>
+                    <h2>Registration Successful</h2>
+                    <div class="button">
+                        <button id="registeredButton" class="btn" onclick="succefulRegister()"> Okay </button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <!-- -------------------------------CATEGORY SECTION----------------------------------------- -->
+    <div class="searchBox">
+        <input type="search" id="findData" class="clearSearch" onkeyup="filter()" placeholder="Search Products" >
+    </div>
+    <div class="mainDivison bevergeSection">
+
+        <div class="productsCount">
+            <p id="productsAvailable"></p>
+            <p id="noProductsAvailable"></p>
+        </div>
+
+        <div class="twoSection sectionGrid">
+
+            <div class="categoryData">
+                <aside>
+                    <h2>Filters</h2>
+                    <hr>
+                    <h5> <b class="findProduct"> Categories </b></h5>
+                    <h3 class="categoryDetails">
+                        <a href="Grocery.html"><i class="fa-solid fa-chevron-left"> </i>Vegetables and Fruits</a>
+                        <div class="categoryAvailable">
+                            <ul>
+                                <li>Fresh Vegetables</li>
+                                <li>Fresh Fruits</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <a href="Beverges.html"><i class="fa-solid fa-chevron-left"></i>Beverges</a>
+                        <div class="categoryAvailable">
+                            <ul>
+                                <li>Soft Drinks</li>
+                                <li>Soft Drinks Can</li>
+                                <li>Energy Drinks</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <a href="householdProducts.html"><i class="fa-solid fa-chevron-left"></i>Household Products</a>
+                        <div class="categoryAvailable">
+                            <ul>
+                                <li>Home & Kitchen</li>
+                            </ul>
+                        </div>
+                    </h3>
+
+                    <h4 class="categoryChoosen"></h4>
+                    <hr>
+
+                    <div class="brands">
+                        <h5> <b>Grocery Varieties </b></h5>
+                        <div class="clearSection">
+                            <input type="search" id="findData1" class="clearSearch" onkeyup="filterGrocery()" placeholder="Search Variety">
+                            <p id="clearFilter" onclick="clearAll()">Clear All</p>
+                        </div>
+                        <ul>
+                            <li> <input type="checkbox" name="Apples" data-btn-num="1" value="1"
+                                    class="checkbox groceryCheck">
+                                Apples
+                            </li>
+                            <li> <input type="checkbox" name="Bananas" class="checkbox groceryCheck" data-btn-num="2"
+                                    value="2">
+                                Bananas
+                            </li>
+                            <li> <input type="checkbox" name="Sapota" class="checkbox groceryCheck" data-btn-num="3"
+                                    value="3">
+                                Sapota
+                            </li>
+                            <li> <input type="checkbox" name="Garlic" class="checkbox groceryCheck" data-btn-num="4"
+                                    value="4">
+                                Garlic
+                            </li>
+                            <li> <input type="checkbox" name="Green Capsicum" class="checkbox groceryCheck"
+                                    data-btn-num="5" value="5">
+                                Green Capsicum </li>
+                            <li> <input type="checkbox" name="Lauki" class="checkbox groceryCheck" data-btn-num="6"
+                                    value="6">
+                                Lauki </li>
+                            <li> <input type="checkbox" name="Potato" class="checkbox groceryCheck" data-btn-num="7"
+                                    value="7">
+                                Potato
+                            </li>
+                            <li> <input type="checkbox" name="Brinjal Black" class="checkbox groceryCheck"
+                                    data-btn-num="8" value="8">
+                                Brinjal Black </li>
+                            <li> <input type="checkbox" name="Cluster Beans" class="checkbox groceryCheck"
+                                    data-btn-num="9" value="9">
+                                Cluster Beans </li>
+                            <li> <input type="checkbox" name="" class="checkbox groceryCheck" data-btn-num="14"
+                                    value="14" id="allProductsGrocery">
+                                All </li>
+                        </ul>
+                    </div>
+                    <hr>
+
+                    <div class="brands">
+                        <h5><b>Beverges Brands</b></h5>
+                        <input type="search" id="findData2" onkeyup="filterBeverges()" placeholder="Search Brand">
+                        <ul>
+                            <li> <input type="checkbox" class="checkbox bevergeCheck" name="Soft Drinks" data-btn-num="10"
+                                    value="10">
+                                Soft Drinks</li>
+                            <li> <input type="checkbox" class="checkbox bevergeCheck" name="Soft Drinks Can" data-btn-num="11"
+                                    value="11">
+                                Soft Drinks Can </li>
+                            <li> <input type="checkbox" class="checkbox bevergeCheck" name="Energy Drinks" data-btn-num="12"
+                                    value="12">
+                                Engery Drinks</li>
+                            <li> <input type="checkbox" class="checkbox bevergeCheck" data-btn-num="13" value="13"
+                                    id="allProductsBeverge">
+                                All </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="brands">
+                        <h5> <b class="findProduct"> Household Products Brands </b></h5>
+                        <input type="search" id="findData3" onkeyup="filterHousehold()" placeholder="Search Brand">
+                        <div class="bevergesBrands">
+                            <ul>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Aquaguard Brand" data-btn-num="15"
+                                        value="15">
+                                    Aquaguard </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Prestige Brand" data-btn-num="16"
+                                        value="16">
+                                    Prestige </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Pigeon Brand" data-btn-num="17"
+                                        value="17">
+                                    Pigeon </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Butterfly Brand" data-btn-num="18"
+                                        value="18">
+                                    Butterfly </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Bajaj Brand" data-btn-num="19"
+                                        value="19">
+                                    Bajaj </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Philips Brand" data-btn-num="20"
+                                        value="20">
+                                    Philips </li>
+                                <li> <input type="checkbox" class="checkbox HouseholdCheck" name="Other Brands" data-btn-num="21"
+                                        value="21">
+                                    Other Brands </li>
+                                <li> <input type="checkbox" class="checkbox" data-btn-num="22" value="22"
+                                        id="allProductsHousehold"> All
+                                    Brands </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="accordin">
+                        <input type="checkbox" name="discount" id="accordinData" class="accordinInput">
+                        <label for="accordinData" class="accordinLabel">
+                            <h5><b>Discounts</b></h5> <i class="fa-solid fa-chevron-down"></i>
+                        </label>
+                        <div class="discountData">
+                            <ul>
+                                <li> <input type="checkbox" name="50% or More Discounted" class="checkbox" id="discountCheckBox"
+                                        data-btn-num="23" value="001"> 50%
+                                    or more </li>
+                                <li> <input type="checkbox" name="40% or More Discounted" class="checkbox" id="discountCheckBox"
+                                        data-btn-num="24" value="002"> 40%
+                                    or more </li>
+                                <li> <input type="checkbox" name="30% or More Discounted" class="checkbox" id="discountCheckBox"
+                                        data-btn-num="25" value="25"> 30%
+                                    or more </li>
+                                <li> <input type="checkbox" name="20% or More Discounted" class="checkbox" id="discountCheckBox"
+                                        data-btn-num="26" value="26"> 20%
+                                    or more </li>
+                                <li> <input type="checkbox" name="10% or More Discounted" class="checkbox" id="discountCheckBox"
+                                        data-btn-num="27" value="27"> 10%
+                                    or more </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="accordin">
+                        <input type="checkbox" name="discount" id="accordinData2" class="accordinInput">
+                        <label for="accordinData2" class="accordinLabel">
+                            <h5><b>Customer Ratings</b></h5> <i class="fa-solid fa-chevron-down"></i>
+                        </label>
+                        <div class="discountData">
+                            <ul>
+                                <li> <input type="checkbox" class="checkbox" name="4 &#9733; & above Rated"
+                                        data-btn-num="28" value="28"> 4
+                                    <span class="reviewStar">&#9733;</span> & above
+                                </li>
+                                <li> <input type="checkbox" class="checkbox" name="3 &#9733; & above Rated"
+                                        data-btn-num="29" value="29"> 3
+                                    <span class="reviewStar">&#9733;</span> & above
+                                </li>
+                                <li> <input type="checkbox" class="checkbox" name="2 &#9733; & above Rated"
+                                        data-btn-num="30" value="30"> 2
+                                    <span class="reviewStar">&#9733;</span> & above
+                                </li>
+                                <li> <input type="checkbox" class="checkbox" name="1 &#9733; & above Rated"
+                                        data-btn-num="31" value="31"> 1
+                                    <span class="reviewStar">&#9733;</span> & above
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- -----------------------------------PRODUCTS---------------------------------- -->
+           
+            <div class="productSection">
+                <div class="productsDiv">
+                    <div class="productGrid grid-four-columns">
+                        <div class="productBox groceryProducts p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31 p-btn--001" id="001">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/VeggetablesFruits/appleFuji.png" alt="beverges" title="Apple Fuji">
+                                    <figcaption>
+                                        <b class="findProduct" data-btn-unique="1"> Apple Fuji Pack 4 pcs</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> <b>Quantity</b> 500g - 700g (Approx)</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (105) </span>
+                                </div>
+                                <p class="discount"> ₹169 <s>₹200</s> <small>16% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31" >
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/appleGranny.png" alt="beverges"
+                                        title="Apple Granny">
+                                    <figcaption>
+                                        <b class="findProduct" data-btn-unique="1"> Apple Granny Smith 4 pcs</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 450g - 600g (Approx)</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (256) </span>
+                                </div>
+                                <p class="discount"> ₹249 <s>₹299</s> <small>17% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31" >
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/VeggetablesFruits/appleRed.png"
+                                        alt="beverges" title="Apple Red">
+                                    <figcaption>
+                                        <b class="findProduct" data-btn-unique="1"> Apple Red Delicious 4 pcs </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 550g - 700g (Approx)</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (125) </span>
+                                </div>
+                                <p class="discount"> ₹172 <s>₹195</s> <small>11% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--1 p-btn--14 p-btn--27 p-btn--29 p-btn--30 p-btn--31" >
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/appleIndian.png" alt="beverges"
+                                        title="Apple Indian">
+                                    <figcaption>
+                                        <b class="findProduct" data-btn-unique="1"> Apple Indian 6 pcs </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 750g - 950g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.9 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (236) </span>
+                                </div>
+                                <p class="discount"> ₹99 <s>₹118</s> <small>16% off</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="productBox groceryProducts p-btn--2 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/bananaNendran.png" alt="beverges"
+                                        title="Banana Nendran">
+                                    <figcaption>
+                                        <b class="findProduct"> Banana Nendran 4 pcs (Box) </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 800g - 1200g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.7 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (93) </span>
+                                </div>
+                                <p class="discount"> ₹129 <s>₹149</s> <small>13% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--2 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/VeggetablesFruits/bananaRed.png"
+                                        alt="beverges" title="Banana Red">
+                                    <figcaption>
+                                        <b class="findProduct"> Banana Red (Box) </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 800g - 1000g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.5 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (106) </span>
+                                </div>
+                                <p class="discount"> ₹129 <s>₹169</s> <small>23% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--3 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31 p-btn--001" id="001">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/VeggetablesFruits/sapota.png"
+                                        alt="beverges" title="Sapota">
+                                    <figcaption>
+                                        <b class="findProduct"> Sapota 6 pcs (Pack) </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 450g - 550g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2<i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (369) </span>
+                                </div>
+                                <p class="discount"> ₹108 <s>₹138</s> <small>22% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--4 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31 p-btn--002" id="002">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/VeggetablesFruits/garlic.png"
+                                        alt="beverges" title="Garlic">
+                                    <figcaption>
+                                        <b class="findProduct"> Indian Garlic </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 200g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.0 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (92) </span>
+                                </div>
+                                <p class="discount"> ₹18 <s>₹25</s> <small>28% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--5 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31 p-btn--001" id="001">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/greenCapsicum.png" alt="beverges"
+                                        title="Green Capsicum">
+                                    <figcaption>
+                                        <b class="findProduct"> Green Capsicum </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 500g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.4 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (136) </span>
+                                </div>
+                                <p class="discount"> ₹66 <s>₹84</s> <small>21% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--6 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/bottleGourd.png" alt="beverges" title="Lauki">
+                                    <figcaption>
+                                        <b class="findProduct"> Lauki (Bottle Gourd) </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 1kg</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (69) </span>
+                                </div>
+                                <p class="discount"> ₹39 <s>₹49</s> <small>20% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--7 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/VeggetablesFruits/potato.png"
+                                        alt="beverges" title="Potato">
+                                    <figcaption>
+                                        <b class="findProduct"> Potato Big </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 1kg</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.1 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (71) </span>
+                                </div>
+                                <p class="discount"> ₹33 <s>₹45</s> <small>27% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--7 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/sweetPotato.png" alt="beverges"
+                                        title="Sweet Potato">
+                                    <figcaption>
+                                        <b class="findProduct"> Sweet Potato </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 500g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.6<i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (211) </span>
+                                </div>
+                                <p class="discount"> ₹40 <s>₹50</s> <small>20% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--8 p-btn--14 p-btn--27 p-btn--26 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/blackBrinjal.png" alt="beverges"
+                                        title="Brinjal Black Big">
+                                    <figcaption>
+                                        <b class="findProduct"> Brinjal Black Big </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 500 g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.5 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (32) </span>
+                                </div>
+                                <p class="discount"> ₹35 <s>₹49</s> <small>28% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox groceryProducts p-btn--9 p-btn--14 p-btn--27 p-btn--26 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img
+                                        src="images/VeggetablesFruits/CLusterBeans.png" alt="beverges"
+                                        title="Cluster Beans">
+                                    <figcaption>
+                                        <b class="findProduct"> Cluster Beans </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 250g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.8 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (32) </span>
+                                </div>
+                                <p class="discount"> ₹29 <s>₹38</s> <small>24% off</small>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img src="images/Beverges/bevergeLimca.png"
+                                        alt="beverges" title="Limca">
+                                    <figcaption>
+                                        <b class="findProduct"> Limca Lime n Lemoni</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 2L</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (2,905) </span>
+                                </div>
+                                <p class="discount"> ₹68 <s>₹95</s> <small>28% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--24 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeMiranda.png"
+                                        alt="beverges" title="Miranda">
+                                    <figcaption>
+                                        <b class="findProduct"> Miranda Plastic Bottle</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 2.25L</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.4 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (1,576) </span>
+                                </div>
+                                <p class="discount"> ₹54 <s>₹99</s> <small>45% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--12 p-btn--27 p-btn--25 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeBadamMix.png"
+                                        alt="beverges" title="Badam Drink">
+                                    <figcaption>
+                                        <b class="findProduct"> Badam Drink Mix </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 500g</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (805) </span>
+                                </div>
+                                <p class="discount"> ₹191 <s>₹275</s> <small>30% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--12 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeEvocus.png"
+                                        alt="beverges" title="Evocus Black Water">
+                                    <figcaption>
+                                        <b class="findProduct"> Evocus Black Alkaline Water </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 12 x 500ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.7 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (23) </span>
+                                </div>
+                                <p class="discount"> ₹920 <s>₹1200</s> <small>23% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeMaaza.png"
+                                        alt="beverges" title="beverges">
+                                    <figcaption>
+                                        <b class="findProduct"> Maaza Mango Drink </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 600ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.9 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (6,690) </span>
+                                </div>
+                                <p class="discount"> ₹33 <s>₹40</s> <small>17% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--25 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/beverges7up.png"
+                                        alt="beverges" title="7up">
+                                    <figcaption>
+                                        <b class="findProduct"> 7up Plastic Bottle </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 2.25L</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.8 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (1,439) </span>
+                                </div>
+                                <p class="discount">₹61 <s>₹99</s> <small>38% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeCocaColaTin.png"
+                                        alt="beverges" title="Coca Cola">
+                                    <figcaption>
+                                        <b class="findProduct"> Coca Cola Light</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 24 x 320ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (4) </span>
+                                </div>
+                                <p class="discount"> ₹3,100 <s>₹3,500</s> <small>11% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--26 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeMinuteMaid.png"
+                                        alt="beverges" title="Minute Maid">
+                                    <figcaption>
+                                        <b class="findProduct"> Minute Maid Puply Orange</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 1L</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.5 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (3,180) </span>
+                                </div>
+                                <p class="discount"> ₹60 <s>₹80</s> <small>25% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--12 p-btn--27 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeMojito.png"
+                                        alt="beverges" title="Mojito">
+                                    <figcaption>
+                                        <b class="findProduct"> Alofrut Mint Mojito</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 24 x 250ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (110) </span>
+                                </div>
+                                <p class="discount"> ₹1,030 <s>₹1,200</s> <small>14% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--11 p-btn--27 p-btn--26 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeMountainDew.png"
+                                        alt="beverges" title="Mountain Dew">
+                                    <figcaption>
+                                        <b class="findProduct"> Mountain Dew Can</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 250ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (923) </span>
+                                </div>
+                                <p class="discount"> ₹26 <s>₹35</s> <small>25% off</small>
+                                </p>
+                            </div>
+                        </div>
+                       <div class="productBox bevergeProducts p-btn--13 p-btn--10 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                
+                                <figure>
+                                    <a href="ProductsDescription.html">
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergeThumbsUp.png"
+                                        alt="beverges" title="Thumbs Up"></a>
+                                    <figcaption>
+                                        <b class="findProduct"> Thums Up </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 2L</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (1,726) </span>
+                                </div>
+                                <p class="discount"> ₹72 <s>₹95</s> <small>24% off</small>
+                                </p>
+                            </div>
+                       
+                        </div>
+                        <div class="productBox bevergeProducts p-btn--13 p-btn--11 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i><img src="images/Beverges/bevergePepsiCan.png"
+                                        alt="beverges" title="Pepsi">
+                                    <figcaption>
+                                        <b class="findProduct"> Pepsi Can (pack 6) </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small><b>Quantity</b> 6 x 50ml</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.5 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (6) </span>
+                                </div>
+                                <p class="discount"> ₹920 <s>₹1200</s> <small>23% off</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="productBox householdProducts p-btn--15 p-btn--22 p-btn--27 p-btn--23 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/AquagaurdFilter.png" alt="beverges"
+                                        title="Aquagrand SkyLand">
+                                    <figcaption>
+                                        <b class="findProduct"> Aquaguard SkyLand 18 Ltr</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 1 year Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.0 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (10,030) </span>
+                                </div>
+                                <p class="discount"> ₹4,578 <s>₹14,500</s> <small>68% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--19 p-btn--22 p-btn--27 p-btn--24 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img src="images/HouseHoldProducts/bajajFan.png"
+                                        alt="beverges" title="BAJAJ Crest Neo">
+                                    <figcaption>
+                                        <b class="findProduct"> BAJAJ Crest Neo 1200 mm 3 Blade Ceiling Fan</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 1 year Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.9 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (8,643) </span>
+                                </div>
+                                <p class="discount"> ₹1,199 <s>₹2,000</s> <small>40% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--18 p-btn--22 p-btn--27 p-btn--24 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/butterfluRapidKettle.png" alt="beverges"
+                                        title="Butterfly Kettle & Water Bottle">
+                                    <figcaption>
+                                        <b class="findProduct"> Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water
+                                            Bottle</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 6 Months Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.7 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (2,432) </span>
+                                </div>
+                                <p class="discount"> ₹800 <s>₹1,499</s> <small>46% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--16 p-btn--22 p-btn--27 p-btn--24 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/electricInduction.png" alt="beverges"
+                                        title="Prestige Induction Cooktop">
+                                    <figcaption>
+                                        <b class="findProduct"> Prestige Atlas 3.0 Induction Cooktop</b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 1.5 years Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (1,512) </span>
+                                </div>
+                                <p class="discount"> ₹1,499 <s>₹2,895</s> <small>48% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--20 p-btn--22 p-btn--27 p-btn--24 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/hairdryer.png" alt="beverges"
+                                        title="PHILIPS Hair Dryer">
+                                    <figcaption>
+                                        <b class="findProduct"> PHILIPS HP8100/46 Hair Dryer (1000 W, Purple)
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 6 Months Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.2 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (29,548) </span>
+                                </div>
+                                <p class="discount"> ₹598 <s>₹1,095</s> <small>45% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--17 p-btn--22 p-btn--27 p-btn--23 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img src="images/HouseHoldProducts/kettle.png"
+                                        alt="beverges" title="Pigeon Electric Kettle ">
+                                    <figcaption>
+                                        <b class="findProduct"> Pigeon Favourite Electric Kettle (1.5 L, Silver, Black)
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 1 year Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.1 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (49,728) </span>
+                                </div>
+                                <p class="discount"> ₹499 <s>₹1,245</s> <small>59% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--17 p-btn--22 p-btn--27 p-btn--23 p-btn--29 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/kettleFlask.png" alt="beverges"
+                                        title="Pigeon Electric Kettle & Bottle ">
+                                    <figcaption>
+                                        <b class="findProduct"> Pigeon 14913 Electric Kettle with Bottle (1.5 L, Silver)
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 6 Months Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">3.8 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (29) </span>
+                                </div>
+                                <p class="discount"> ₹699 <s>₹1,545</s> <small>54% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--21 p-btn--22 p-btn--27 p-btn--23 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img
+                                        src="images/HouseHoldProducts/lifelongMixer.png" alt="beverges"
+                                        title="Mixer Grinder Dry Iron ">
+                                    <figcaption>
+                                        <b class="findProduct"> Lifelong LLCMB02 500 W Mixer Grinder & 1100 W Dry Iron
+                                            Combo
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 6 Months Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.1 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (6,170) </span>
+                                </div>
+                                <p class="discount"> ₹1,499 <s>₹3,398</s> <small>55% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--18 p-btn--22 p-btn--27 p-btn--23 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img src="images/HouseHoldProducts/mixer.png"
+                                        alt="beverges" title="Butterfly Mixer Grinder ">
+                                    <figcaption>
+                                        <b class="findProduct"> Butterfly Rapid Plus 750 W Mixer Grinder
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> 2 years Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.3 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (6,810) </span>
+                                </div>
+                                <p class="discount"> ₹3,199 <s>₹6,499</s> <small>50% off</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productBox householdProducts p-btn--19 p-btn--22 p-btn--27 p-btn--24 p-btn--28 p-btn--30 p-btn--31">
+                            <div class="productImage">
+                                <figure>
+                                    <i class="fa-regular fa-heart"></i> <img src="images/HouseHoldProducts/mixer2.png"
+                                        alt="beverges" title="Bajaj Mixer Grinder ">
+                                    <figcaption>
+                                        <b class="findProduct"> Bajaj GX1 500 W Mixer Grinder
+                                        </b>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="productDetails">
+                                <small> year Warranty</small>
+                            </div>
+                            <div class="productPrice">
+                                <div class="ratings"> <span class="rating">4.5 <i class="fa-solid fa-star fa-xs"></i>
+                                    </span>
+                                    <span> (2,810) </span>
+                                </div>
+                                <p class="discount"> ₹1,999 <s>₹3,505</s> <small>42% off</small>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------FOOTER SECTION------------------------ -->
+
+
+    <script src="index.js"></script>
+    <script src="validation.js"></script>
+    <script src="filtration.js"></script>  
+</body>
+
+</html>

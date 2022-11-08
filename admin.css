@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(248, 246, 246);
+}
+
+/* RESUABLE CODE */
+
+:root {
+    --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
+    --btns-background: rgb(29, 106, 193);
+    --white: #fff;
+    --menu: rgb(189, 201, 213);
+    --title: rgb(8, 5, 97);
+    --span: rgb(191, 53, 53);
+    --gray: rgb(121, 113, 113);
+}
+
+.container {
+    max-width: 140rem;
+    padding: 0 4rem;
+}
+
+section {
+    padding: 2rem 0;
+    background-color: var(--white);
+
+}
+
+/* MENU SECTION RESUABLE CODE */
+
+span {
+    color: var(--title);
+}
+
+.Logo h2 {
+    margin-right: 2rem;
+    color: var(--span);
+    font-weight: 900;
+    z-index: 9999;
+}
+
+.Logo {
+    margin: auto;
+    padding: 0 40px;
+    margin: 2rem;
+    position: fixed;
+    z-index: 9999;
+}
+
+.menuDatas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+}
+
+.admin-menu-two-columns{
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile{
+    display: flex;
+    justify-content: inline-flex;
+}
+
+.rightSideData{
+    display: flex;
+    justify-content: end;
+    float: right;
+}
+
+
+/* DASHBOARD RESUABLE SECTION */
+
+/* GRID SECTION */
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.dashboard-two-columns{
+    grid-template-columns: 20% 70%;
+}
+
+.grid-dashboard-menu-two {
+    grid-template-columns: 2% 80%;
+}
+
+.dashboardOverview-three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.products-two-columns{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.grid-order-four-columns{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.activated{
+     background-color: var(--btns-background);
+     color: var(--white);
+}
+
+.admin-section{
+    padding-top: 8rem;
+}
+
+.admin-section  h2{
+    text-align: center;
+    color: var(--btns-background);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    position: fixed;
+    height: max-content;
+}
+
+.dashboardSection{
+    margin-left: 2rem;
+    padding: 2rem;
+}
+
+
+/* DASHBOARD SECTION */
+
+.dashboard h2 {
+    padding: 3rem 0;
+}
+
+.dashboard p {
+    padding: 1rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.dashboard .icons i{
+    padding-right: 1rem;
+}
+
+.dashboard-active {
+    background-color: var(--btns-background);
+    border-radius: 2rem;
+    color: var(--white);
+}
+
+/* DASHBOARD OVERVIEW SECTION */
+.dashboardOverview h2{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
+
+.totalAmount {
+    background-color: var(--btns-background);
+    color: var(--white);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+}
+
+.totalAmount h3{
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1rem auto;
+}
+
+.totalAmount p {
+    text-align: center;
+    font-weight: 900;
+    margin: 1rem auto;
+}
+
+.dashboardHistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:is(.totalProducts, .totalOrders, .totalUsers) {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: var(--btns-background);
+    color: var(--white);
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto;
+}
+
+:is(.totalProducts, .totalOrders, .totalUsers) p {
+     font-size: 1.4rem;
+}
+
+
+/* ORDERS SECTION */
+
+.ordersGrid{
+    display: grid;
+    gap: 2rem;
+}
+
+.ordersDashboard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ordersDataBox{
+    background-color: var(--btns-background);
+    color: var(--white);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 8rem;
+    margin: 1rem auto;
+    border-radius: 3rem;
+}
+
+/* USERS DASHBOARD */
+
+#productDashboard, #usersDatas, #ordersDashboard{
+    display: none;
+}
+
+.userTable{
+    border-collapse:collapse;
+    margin: 3rem 0;
+    min-width: 40rem;
+    font-size: 1.2rem;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.userTable thead{
+    text-align: left;
+    background-color: var(--btns-background);
+    color: var(--white);
+    font-weight: 900;
+}
+
+.userTable th, .userTable td{
+    padding: 1rem 1.2rem;
+}
+
+.userTable tbody tr{
+    border-bottom: 1px solid var(--btns-background);
+}
+
+.userTable tbody tr:nth-of-type(even){
+    background:rgb(238, 238, 241);
+    
+}
+
+.userTable tbody tr:last-of-type{
+    border-bottom: 0.3rem solid var(--btns-background);
+}
+
+
+/* DASHBOAR HIDING DATA */
+
+.usersList{
+    display: none;
+}
+
+.productDashboardSection{
+    display: none;
+}
+
+.orderList{
+    display: none;
+}
