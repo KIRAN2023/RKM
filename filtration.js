@@ -285,6 +285,7 @@ var discountCheckBox = document.querySelectorAll(".discountCheckBox");
 var groceryCheckBoxes = document.querySelectorAll(".groceryCheckBoxes");
 
 var list = [];
+var checkboxData = [];
 var discountList = [];
 var discountedProductValues = [];
 var discountedProducts = [];
@@ -297,7 +298,7 @@ var disCount = 0;
 for (var check of checkbox) {
 
     check.addEventListener('click', function (e) {
-
+        // checkboxData.push
         if (this.checked == true) {
             if (e.target.id == "allProductsGrocery") {
 
@@ -374,7 +375,9 @@ for (var check of checkbox) {
             }
 
             list.forEach(displayProducts);
-            discountedProduct();
+            if(discountedProductValues.length!=0){
+                discountedProduct();
+            }
             reviewProduct();
         }
 
@@ -527,7 +530,7 @@ for (var check of checkbox) {
                         product.classList.remove("product-not-active");
                     }
                 }
-                
+
                 if (discountedProductValues.length != 0 && reviewProducts.length != 0) {
                     if (product.getAttribute("value") < minD || product.getAttribute("reviewRating") < minR) {
                         product.classList.add("product-not-active");
@@ -613,7 +616,6 @@ function clearAll() {
     document.getElementById("productsAvailable").innerHTML = "";
     document.getElementById("noProductsAvailable").innerHTML = "";
 
-    product.forEach((element) => { element.style.display = "initial" });
     for (var check of checkbox) {
         check.checked = false;
         check.disabled = false;
@@ -634,7 +636,6 @@ function filter() {
             productsDiv.classList.add("product-not-active");
         }
     }
-
 }
 
 function filterGrocery() {
