@@ -600,6 +600,7 @@ for (var check of checkbox) {
 // SEARCH FILTRATION
 
 function clearAll() {
+    product.forEach((products) => products.classList.remove("product-not-active"));
     list.splice(0, list.length);
     discountedProductValues.splice(0, discountedProductValues.length);
     discountList.splice(0, discountList.length);
