@@ -628,9 +628,9 @@ function filter() {
     for (var productsDiv of products) {
         var datas = productsDiv.querySelector(".findProduct");
         if (datas.textContent.toUpperCase().indexOf(filter) > -1) {
-            productsDiv.style.display = "initial";
+            productsDiv.classList.remove("product-not-active");
         } else {
-            productsDiv.style.display = "none";
+            productsDiv.classList.add("product-not-active");
         }
     }
 
